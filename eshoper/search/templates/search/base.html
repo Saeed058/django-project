@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+<form action="{% url "search" %}" class="inline " method="get">
+    {% csrf_token %}
+    <div class="form-group mb-2">
+        <label for="inputPassword2" class="sr-only">search product</label>
+        <input type="text" class="form-control" name="q" id="search exampleInputPassword1" placeholder="Search a Product">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">search</button>
+</form>
+
+
+</body>
+</html>

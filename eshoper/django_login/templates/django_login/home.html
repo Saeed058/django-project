@@ -1,0 +1,42 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Login home{% endblock title %}</title>
+    <style type="text/css">
+        .nav {
+            padding-left: 0;
+        }
+        .nav li {
+            display: inline;
+            list-style-type: none;
+            padding-right: 20px;
+        }
+        .container {
+            width: 940px;
+            margin: 0 auto
+        }
+        .content {
+            float: left;
+            width: 80%;
+        }
+        .sidebar {
+            float: left;
+            width: 20%;
+        }
+    </style>
+    {% render_block "css" %}
+</head>
+<body>
+    {% cms_toolbar %}
+    {% if user.is_authenticated %}
+    <p>hello</p>
+    <p>{{ user.username }}</p>
+    <p><a href="/logout">Logout</a></p>
+    {% else %}
+    <p><a href="/login">Login</a></p>
+    <p><a href="/register">Register</a></p>
+    {% endif %}
+    {% render_block "js" %}
+</body>
+</html>
